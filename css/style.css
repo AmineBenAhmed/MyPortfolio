@@ -1,0 +1,399 @@
+body {
+  font-size: 14px;
+  color: #333;
+  background-color: rgb(255, 253, 254);
+  letter-spacing: 1px;
+  width: 98%;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute; /*is positionned relative to the closest parent element which here "slides"*/
+  z-index: 4; /*zindex is 4 here because we want next prev icons on the overlay and they zind 6 so they are on the overlay otherwise we can't click them*/
+  background-color: rgba(0, 0, 0, 0.4); /*black overlay with opacity 0.4*/
+}
+
+.slides-navigation {
+  width: 100%;
+  z-index: 6;
+}
+
+.slides-navigation .prev,
+.slides-navigation .next {
+  /*this code is applied to next and prev*/
+  height: 60px;
+  width: 60px;
+}
+
+.slides-navigation a.prev {
+  /*this code applied only within slides-navigation class on anchor tags with class  <a class="prev"></a>*/
+  left: 20px;
+  background-image: url(../icons/prev.png);
+}
+
+.slides-navigation a.next {
+  /*this code applied only within slides-navigation class on anchor tags with class next <a class="next">*/
+  right: 20px;
+  background-image: url(../icons/next.png);
+}
+
+.titleMessage {
+  position: absolute;
+  width: 100%;
+  height: 250px;
+  top: 50%;
+  z-index: 5; /* must on the overlay so the zind > zind_overlay=4 and less then next_prev buttons zind which is 6 to let them clickable */
+  text-align: center;
+  margin-top: -125px;
+}
+
+.titleMessage .heading p {
+  color: #fff;
+  text-shadow: 0px 2px 5px rgba(0, 2, 15, 0.4); /*rgba in text shadow represents its color and opacity and the rest the first horizontal shadow the second is the vertical shadow and the third is the radius*/
+  font-weight: 100;
+  letter-spacing: 7px; /*spaces between letters of the word*/
+}
+
+.titleMessage .heading .main {
+  font-size: 50px;
+}
+
+.titleMessage .heading .sub {
+  font-size: 23px;
+}
+
+.section {
+  padding: 100px 0; /*that means 100 in the top and bottom and 0 in left and right it's equivalent to 100px 0 100px 0*/
+  font-size: 17.5px;
+  width: 100%;
+}
+
+.aboutImage {
+  max-width: 100%;
+}
+
+.skillsSection,
+.contactSection {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.skill {
+  text-align: center;
+  margin-left: 10px;
+}
+
+.chart {
+  position: relative;
+  width: 152px;
+  height: 152px;
+  display: inline-block;
+  text-align: center;
+}
+
+.chart canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.chart .percent {
+  color: #000;
+  line-height: 152px; /*the circle has 152px height and width and therefore the line height between the parent element and the child element is 152px to be in the center*/
+  font-size: 38px;
+  display: inline-block;
+}
+
+.chart .percent:after {
+  /*make the following values after the 'percent'  element here we will write the '%'*/
+  content: '%';
+}
+
+.squareItem {
+  margin-top: 30px;
+  position: relative;
+}
+
+.squareInnerContainer {
+  position: relative;
+  padding: 50px 15px 35px;
+  text-align: center;
+  border: 2px solid #000;
+  border-top: none;
+}
+
+/*apply the code below before and after squareInnerContainer element*/
+.squareInnerContainer:before,
+.squareInnerContainer:after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  width: 30%;
+  border-top: 2px solid #000;
+}
+
+.squareInnerContainer:after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  width: 30%;
+  border-top: 2px solid #000;
+}
+
+.squareInnerContainer:before {
+  right: 0px;
+}
+
+.squareInnerContainer:after {
+  left: 0px;
+}
+
+.squareContent h2 {
+  font-size: 52px;
+  display: inline;
+  margin-bottom: 10px;
+  font-weight: 400;
+  color: #e74c3c;
+}
+
+.squareContent h3 {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0;
+}
+.squareContent h4 {
+  font-size: 11px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.squareIcon {
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  width: 40%;
+  height: 60px;
+  font-size: 50px;
+  margin-left: -20%;
+}
+
+.contactButton {
+  color: #fff;
+  display: inline-block;
+  padding: 15px 20px;
+  border: 1px solid #fff;
+  margin-top: 20px;
+  border-radius: 2px;
+}
+
+.contactButton:hover {
+  text-decoration: none;
+  color: #e74c3c;
+  background-color: #fff;
+}
+
+.filters a {
+  color: #bdc3c7;
+  border: 1px solid #bdc3c7;
+  padding: 10px 18px;
+  display: block;
+}
+
+.filters li {
+  display: inline-block;
+  padding: 5px;
+}
+
+.filters .current {
+  background-color: #e74c3c;
+  border-color: #e74c3c;
+  color: #fff;
+}
+
+.filters {
+  text-align: center;
+  width: 100%;
+}
+
+.section .heading {
+  text-align: center;
+  padding-bottom: 40px;
+  width: 100%;
+}
+
+.item {
+  display: inline-block;
+}
+
+.items li {
+  display: inline-block;
+  padding: 5px;
+}
+
+.itemsContainer {
+  width: 100%;
+}
+
+.items .img {
+  width: 100%;
+}
+
+.items .item {
+  position: relative;
+}
+
+.items .icons {
+  position: absolute;
+  width: 90px;
+  height: 40px;
+  left: 50%;
+  top: 50%;
+  margin: -20px auto 0 -47px;
+  text-align: center;
+  z-index: 3;
+}
+
+.items .icons i {
+  font-size: 20px;
+  color: #fff;
+  margin-top: 0px;
+}
+
+.items a {
+  width: 35px;
+  height: 35px;
+  background-color: #e74c3c;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: all 0.3s linear, 0.4s; /* for chrome */
+  -moz-transition: all 0.3s linear, 0.4s; /* for mozilla */
+  -o-transition: all 0.3s linear, 0.4s; /* for opera */
+  -ms-transition: all 0.3s linear, 0.4s; /* for internet explorer */
+  -transition: all 0.3s linear, 0.4s; /* for for all other browsers */
+}
+
+.items .imageOverlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  opacity: 0;
+
+  -webkit-transition: all 0.2s linear, 1s; /* for chrome */
+  -moz-transition: all 0.3s linear, 1s; /* for mozilla */
+  -o-transition: all 0.3s linear, 1s; /* for opera */
+  -ms-transition: all 0.3s linear, 1s; /* for internet explorer */
+  -transition: all 0.3s linear, 1s; /* for for all other browsers */
+}
+
+.items .item:hover .imageOverlay {
+  opacity: 1;
+}
+
+.items .openButton {
+  float: left;
+  left: -80%;
+}
+.items .projectLink {
+  float: right;
+  right: -80%;
+}
+
+.items .item:hover .openButton {
+  left: 0px;
+  opacity: 1;
+}
+
+.items .item:hover .projectLink {
+  right: 0px;
+  opacity: 1;
+}
+
+.items .item:hover img {
+  -webkit-transform: scale(1.09, 1.01); /* for chrome */
+  -moz-transform: scale(1.05, 1.05); /* for mozilla */
+  -o-transform: scale(1.05, 1.05); /* for opera */
+  -ms-transform: scale(1.05, 1.05); /* for internet explorer */
+  -transform: scale(1.05, 1.05); /* for for all other browsers */
+  -webkit-transition: all 0.3s linear, 0.4s; /* for chrome */
+  -moz-transition: all 0.3s linear, 0.4s; /* for mozilla */
+  -o-transition: all 0.3s linear, 0.4s; /* for opera */
+  -ms-transition: all 0.3s linear, 0.4s; /* for internet explorer */
+  -transition: all 0.3s linear, 0.4s; /* for for all other browsers */
+}
+
+.items {
+  padding: 0;
+}
+
+.copyrightSection {
+  background-color: #000;
+  color: #fff;
+  padding: 30px 5px;
+}
+
+.copyrightSection p {
+  padding: 0;
+}
+
+#navigation {
+    background-color: #e74c4e;
+    padding: 20px 10px;
+    z-index: 100;
+    width: 100%;
+}
+
+#navigation li {
+  padding: 0px 10px;
+}
+
+#navigation li a {
+  color: #fff;
+}
+
+#navigation li a:hover,
+#navigation li a:active {
+  color: #000;
+}
+
+.navbar-brand,
+.navbar-brand:hover {
+  color: #fff;
+}
+
+.navbar-toggler-icon {
+  background: url(../icons/menu.png);
+  background-size: 100%;/*to oblige the background to wrap all the image*/
+  color: #fff;
+}
+
+.fixedNav #navigation {
+  position: fixed;
+  top: 0;
+}
+
+.loader {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 101;
+}
+
+.loader .inner {
+  height: 100%;
+  width: 100%;
+  background: url(../icons/loader.gif) center center no-repeat;
+}
+
+
+
